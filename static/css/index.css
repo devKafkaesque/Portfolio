@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EDDFE0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    padding-top: 5vh;
+}
+
+.div-container {
+    display: flex;
+    flex-grow: 1;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    height: 5vh;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100vw;
+    height: 3vh;
+}
+
+.navbar ul li {
+    padding: 0 10px;
+}
+
+.navbar ul li label {
+    text-decoration: none;
+    color: #705C53;
+    font-size: 1.2rem;
+    font-weight: 600;
+    user-select: none;
+}
+
+.navbar ul li label:hover {
+    color: #B7B7B7;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    height: 50vh;
+    width: 80vw;
+    position: relative;
+    align-self: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7) inset;
+    justify-content: center;
+    background-color: #F5F5F7;
+}
+
+.container h1 {
+    color: #B7B7B7;
+    user-select: none;
+}
+
+.container p {
+    color: #705C53;
+    user-select: none;
+}
+
+#first-container {
+    position: relative;
+    margin: 10px auto;
+}
+
+#second-container {
+    position: relative;
+    margin: 10px;
+}
+
+.footer {
+    width: 100vw;
+    height: 10vh;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    bottom: 0;
+    z-index: 100;
+    margin-top: 10px;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #B7B7B7;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #B7B7B7;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    color: #F5F5F7;
+}
+
+
+#jap_fan {
+    display: inline-flex;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 100vh;
+}
+
+#jap_fan:hover {
+    transform: rotate(-90deg) scale(0.8);
+    transition: ease 0.5s;
+}
