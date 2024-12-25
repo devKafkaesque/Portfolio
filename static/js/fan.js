@@ -15,4 +15,3 @@ if (jap_fan) {
 } else {
     console.warn('Element with id "jap_fan" not found!');
 }
-

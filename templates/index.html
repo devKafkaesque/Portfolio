@@ -23,13 +23,13 @@
 </nav>
 
 <div class="div-container">
-    <div class="container" id="second-container">
+    <div class="container" id="first-container">
         <div class="text-container">
             <h1>Vishist Parashar</h1>
             <p>Portfolio</p>
         </div>
     </div>
-    <div class="container" id="first-container">
+    <div class="container" id="second-container">
         <div class="text-container">
             <h1>Athlead</h1>
             <p>Welcome to Athlead, a one-stop fitness solution built with the Django framework.
@@ -39,11 +39,22 @@
         </div>
         <div class="container-pointer" style="background-image: url({% static 'images/django.png' %})"></div>
     </div>
+    <div class="container" id="third-container">
+        <div class="text-container">
+            <h1>Learn_React</h1>
+            <p>React Website created using essential React fundamentals including utilising state hook and dynamic
+                styling</p>
+        </div>
+        <div id='react_logo' class="container-pointer" style="background-image: url({% static 'images/react_logo.png' %})"></div>
+    </div>
 </div>
+
 
 <div class="footer">
     <div id="jap_fan" style="background-image: url({% static 'images/japanese_fan.png' %})"></div>
 </div>
+
+
 <script src="{% static 'js/index.js' %}"></script>
 <script src="{% static 'js/fan.js' %}"></script>
 <script src="{% static 'js/container-dropdown.js' %}"></script>
