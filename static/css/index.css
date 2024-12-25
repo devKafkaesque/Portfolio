@@ -1,22 +1,32 @@
-
+/* 1. Root Variables */
 :root {
     --main-background: #333;
+    --primary-color: #ab6d6d;
+    --secondary-color: #705C53;
+    --hover-color: rgba(101, 74, 64, 0.7);
+    --text-hover-color: rgba(151, 173, 31, 0.7);
+    --whiite: white;
+    --greeen: rgba(64, 101, 71, 0.7);
 }
 
+/* 2. Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: ease-in 0.4s;
 }
 
+/* 3. Body and Layout Containers */
 body {
-    background-color: #333;
+    background-color: var(--main-background);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     width: 100vw;
     overflow-x: hidden;
     padding-top: 5vh;
+    font-weight: bold;
 }
 
 .div-container {
@@ -28,6 +38,7 @@ body {
     flex-direction: column;
 }
 
+/* 4. Navigation Bar */
 .navbar {
     display: flex;
     height: 5vh;
@@ -35,7 +46,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: var(--main-background);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
@@ -56,14 +67,14 @@ body {
 
 .navbar ul li label {
     text-decoration: none;
-    color: #ab6d6d;
+    color: var(--primary-color);
     font-size: 1.2rem;
     font-weight: 600;
     user-select: none;
 }
 
 .navbar ul li label:hover {
-    color: #B7B7B7;
+    color: var(--hover-color);
     cursor: pointer;
 }
 
@@ -72,6 +83,7 @@ body {
     right: 0;
 }
 
+/* 5. Containers */
 .container {
     display: flex;
     height: fit-content;
@@ -81,84 +93,109 @@ body {
     align-items: center;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    /*background-color: #333;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.38);
+    justify-content: flex-start;
 }
 
 .text-container {
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
+    justify-self: flex-start;
+    align-self: flex-start;
     padding: 15px;
 }
 
-.container h1 {
-    color: #ab6d6d;
-    user-select: none;
-}
-
-.container p {
-    color: #705C53;
-    justify-self: center;
-    user-select: none;
-}
-
-#first-container {
+.container-comp {
+    display: flex;
     position: relative;
-    margin: 10px auto;
-    transition: transform ease-in 0.4s;
+    background-color: var(--greeen);
+    align-self: flex-start;
+    justify-self: flex-start;
+    height: 100px;
+    width: 100%;
 }
 
-#first-container:hover {
-    transform: scale(1.05);
-
-}
-
-#first-container:active {
-    transform: scale(1);
-    transition: transform ease-in 0.15s;
-}
-
-
-#second-container {
+/* 6. Specific Container Styles */
+#first-container {
+    display: flex;
+    height: 90vh;
+    flex-direction: column;
     position: relative;
     margin: 10px;
 }
 
+#first-container p {
+    color: var(--secondary-color);
+}
+
+#second-container, #third-container {
+    position: relative;
+    margin: 10px auto;
+    transition: transform ease-in 0.4s;
+    background-color: var(--hover-color);
+}
+
+#second-container:hover, #third-container:hover {
+    transform: scale(1.05);
+}
+
+#second-container:active, #third-container:active {
+    transform: scale(1);
+    background-color: var(--hover-color);
+    transition: transform ease-in 0.15s;
+}
+
+/* 7. Text and Typography */
+.container h1 {
+    color: var(--primary-color);
+    user-select: none;
+}
+
+.container p {
+    color: var(--whiite);
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--text-hover-color);
+}
+
+/* 8. Footer */
 .footer {
     width: 100vw;
     height: 10vh;
-    background-color: #333;
-    color: white;
+    background-color: var(--main-background);
+    color: var(--whiite);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
     padding: 10px;
-    bottom: 0;
-    z-index: 100;
     margin-top: 10px;
 }
 
 .footer p {
     margin: 5px 0;
     font-size: 1rem;
-    color: #ab6d6d;
+    color: var(--primary-color);
 }
 
 .footer a {
     text-decoration: none;
-    color: #ab6d6d;
+    color: var(--primary-color);
     font-weight: 600;
 }
 
 .footer a:hover {
-    color: #F5F5F7;
+    color: var(--text-hover-color);
 }
 
+/* 9. Animations and Effects */
 #jap_fan {
     display: inline-flex;
     background-repeat: no-repeat;
@@ -185,6 +222,18 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     align-self: center;
+    justify-self: flex-end;
     top: 12.5vh;
     transition: ease-out 0.5s;
+}
+
+#react_logo {
+    position: absolute;
+    right: -1%;
+    top: 40%;
+    height: 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-self: center;
 }
