@@ -23,4 +23,5 @@ Athlead.addEventListener('mouseover', function () {
 
 Athlead.addEventListener('mouseout', function () {
     dj.style.transform = 'scale(1)';
+    dj.style.borderRadius = '0';
 });
