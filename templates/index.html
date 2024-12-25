@@ -3,8 +3,6 @@
 <html lang="en">
 <head>
     <title>Vishist Parashar</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{% static 'images/ath_logo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
@@ -12,39 +10,42 @@
 
 <nav class="navbar">
     <ul>
-        <li>
+        <li id="nav-home">
             <label>Home</label>
         </li>
-        <li>
+        <li id="nav-github">
             <label>GitHub</label>
         </li>
-        <li>
+        <li id="nav-contact">
             <label>Drop Contact?</label>
         </li>
     </ul>
 </nav>
 
 <div class="div-container">
-    <div class="container" id="first-container">
-        <div>
+    <div class="container" id="second-container">
+        <div class="text-container">
             <h1>Vishist Parashar</h1>
-            <p>Welcome to Vishist Parashar</p>
+            <p>Portfolio</p>
         </div>
     </div>
-    <div class="container" id="second-container">
-        <div>
-            <h1>Vishist Parashar</h1>
-            <p>Welcome to Vishist Parashar</p>
+    <div class="container" id="first-container">
+        <div class="text-container">
+            <h1>Athlead</h1>
+            <p>Welcome to Athlead, a one-stop fitness solution built with the Django framework.
+                This platform empowers users to track workouts, set fitness goals, and access personalized programs, all
+                in a single, user-friendly interface. Athlead’s codebase is structured to provide a seamless,
+                data-driven experience for users aiming to enhance their fitness journey.</p>
         </div>
+        <div class="container-pointer" style="background-image: url({% static 'images/django.png' %})"></div>
     </div>
 </div>
 
 <div class="footer">
-
-    <div id="jap_fan" style="background-image: url({% static 'images/japanese_fan.png' %})">
-
-    </div>
+    <div id="jap_fan" style="background-image: url({% static 'images/japanese_fan.png' %})"></div>
 </div>
 <script src="{% static 'js/index.js' %}"></script>
+<script src="{% static 'js/fan.js' %}"></script>
+<script src="{% static 'js/container-dropdown.js' %}"></script>
 </body>
 </html>

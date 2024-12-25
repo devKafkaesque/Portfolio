@@ -1,3 +1,8 @@
+
+:root {
+    --main-background: #333;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +10,7 @@
 }
 
 body {
-    background-color: #EDDFE0;
+    background-color: #333;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -31,7 +36,7 @@ body {
     align-items: center;
     padding: 10px 20px;
     background-color: #333;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
     left: 0;
@@ -41,8 +46,6 @@ body {
 .navbar ul {
     display: flex;
     list-style: none;
-    justify-content: space-around;
-    align-items: flex-start;
     width: 100vw;
     height: 3vh;
 }
@@ -53,7 +56,7 @@ body {
 
 .navbar ul li label {
     text-decoration: none;
-    color: #705C53;
+    color: #ab6d6d;
     font-size: 1.2rem;
     font-weight: 600;
     user-select: none;
@@ -64,34 +67,59 @@ body {
     cursor: pointer;
 }
 
+.navbar #nav-contact {
+    position: absolute;
+    right: 0;
+}
+
 .container {
     display: flex;
-    height: 50vh;
+    height: fit-content;
     width: 80vw;
     position: relative;
     align-self: center;
     align-items: center;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7) inset;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
     justify-content: center;
-    background-color: #F5F5F7;
+    /*background-color: #333;*/
+}
+
+.text-container {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
 }
 
 .container h1 {
-    color: #B7B7B7;
+    color: #ab6d6d;
     user-select: none;
 }
 
 .container p {
     color: #705C53;
+    justify-self: center;
     user-select: none;
 }
 
 #first-container {
     position: relative;
     margin: 10px auto;
+    transition: transform ease-in 0.4s;
 }
+
+#first-container:hover {
+    transform: scale(1.05);
+
+}
+
+#first-container:active {
+    transform: scale(1);
+    transition: transform ease-in 0.15s;
+}
+
 
 #second-container {
     position: relative;
@@ -118,12 +146,12 @@ body {
 .footer p {
     margin: 5px 0;
     font-size: 1rem;
-    color: #B7B7B7;
+    color: #ab6d6d;
 }
 
 .footer a {
     text-decoration: none;
-    color: #B7B7B7;
+    color: #ab6d6d;
     font-weight: 600;
 }
 
@@ -131,16 +159,32 @@ body {
     color: #F5F5F7;
 }
 
-
 #jap_fan {
     display: inline-flex;
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
     width: 100px;
-    height: 100vh;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.5s ease-out;
 }
 
 #jap_fan:hover {
-    transform: rotate(-90deg) scale(0.8);
-    transition: ease 0.5s;
+    transform: rotate(-90deg) scale(0.6);
+}
+
+#jap_fan:active {
+    transform: rotate(-90deg) scale(0.9);
+}
+
+.container-pointer {
+    width: 100px;
+    height: 50px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-self: center;
+    top: 12.5vh;
+    transition: ease-out 0.5s;
 }
