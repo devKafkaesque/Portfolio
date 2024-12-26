@@ -6,7 +6,7 @@
     <link rel="icon" href="{% static 'images/ath_logo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
-<body>
+<body style="background-image: url('{% static 'images/black_grid.png' %}'); background-repeat: no-repeat;">
 
 <nav class="navbar">
     <ul>
@@ -21,7 +21,12 @@
         </li>
     </ul>
 </nav>
-
+<div id="contextMenu" class="context-menu" style="display:none">
+    <ul>
+        <li class="hire_me">Hire Me?</li>
+        <li class="hire_me"><a href="#">Back on Top</a></li>
+    </ul>
+</div>
 <div class="div-container">
     <div class="container" id="first-container">
         <div class="container-comp" id="game-1"></div>
@@ -29,7 +34,19 @@
             <h1>Vishist Parashar</h1>
             <p>Portfolio</p>
         </div>
-
+        <div class="container-comp" id="game-2">
+            <div class="text-line"></div>
+            <div id="text-game-2">
+                <h4>Skills</h4>
+            </div>
+            <div class="text-line"></div>
+        </div>
+        <div class="skills-container">
+            hi
+            <div class="js-skill">
+                hello
+            </div>
+        </div>
     </div>
     <div class="container" id="second-container">
         <div class="text-container">
@@ -57,7 +74,7 @@
     <div id="jap_fan" style="background-image: url({% static 'images/japanese_fan.png' %})"></div>
 </div>
 
-
+<script src="{% static 'js/right-click.js' %}"></script>
 <script src="{% static 'js/index.js' %}"></script>
 <script src="{% static 'js/fan.js' %}"></script>
 <script src="{% static 'js/container-dropdown.js' %}"></script>

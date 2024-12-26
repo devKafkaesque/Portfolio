@@ -5,8 +5,8 @@
     --secondary-color: #705C53;
     --hover-color: rgba(101, 74, 64, 0.7);
     --text-hover-color: rgba(151, 173, 31, 0.7);
-    --whiite: white;
-    --greeen: rgba(64, 101, 71, 0.7);
+    --white: white;
+    --green: rgba(108, 43, 70, 0.57);
 }
 
 /* 2. Reset and Global Styles */
@@ -14,12 +14,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+button, a, .navbar ul li label {
     transition: ease-in 0.4s;
 }
 
 /* 3. Body and Layout Containers */
 body {
-    background-color: var(--main-background);
+    background-size: cover;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -46,7 +49,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: var(--main-background);
+    background-color: rgba(51, 51, 51, 0.78);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
@@ -57,7 +60,6 @@ body {
 .navbar ul {
     display: flex;
     list-style: none;
-    width: 100vw;
     height: 3vh;
 }
 
@@ -79,8 +81,7 @@ body {
 }
 
 .navbar #nav-contact {
-    position: absolute;
-    right: 0;
+    margin-left: auto;
 }
 
 /* 5. Containers */
@@ -98,23 +99,44 @@ body {
 }
 
 .text-container {
-    justify-self: flex-start;
     align-self: flex-start;
     padding: 15px;
+}
+
+#game-2 {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    position: relative;
+    border: 2px solid var(--green);
+    background-color: var(--green);
+}
+
+.text-line {
+    display: flex;
+    align-self: center;
+    width: 40%;
+    height: 10%;
+    background-color: var(--primary-color);
 }
 
 .container-comp {
     display: flex;
     position: relative;
-    background-color: var(--greeen);
+    background-color: var(--green);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
     align-self: flex-start;
-    justify-self: flex-start;
     height: 100px;
     width: 100%;
 }
 
-/* 6. Specific Container Styles */
 #first-container {
+    background-color: var(--main-background);
+    user-select: none;
     display: flex;
     height: 90vh;
     flex-direction: column;
@@ -124,12 +146,30 @@ body {
 
 #first-container p {
     color: var(--secondary-color);
+
+}
+
+#first-container h4 {
+
+    color: var(--primary-color);
+    transition: ease-in-out 0.4s;
+    font-size: 1.1rem;
+    padding-inline: 10px;
+    font-family: Oswald, serif;
+}
+
+#first-container h4:hover {
+    transform: scale(1.2);
 }
 
 #second-container, #third-container {
     position: relative;
     margin: 10px auto;
     transition: transform ease-in 0.4s;
+    background-color: var(--green);
+}
+
+#third-container {
     background-color: var(--hover-color);
 }
 
@@ -139,18 +179,17 @@ body {
 
 #second-container:active, #third-container:active {
     transform: scale(1);
-    background-color: var(--hover-color);
     transition: transform ease-in 0.15s;
 }
 
-/* 7. Text and Typography */
+/* 6. Text and Typography */
 .container h1 {
     color: var(--primary-color);
     user-select: none;
 }
 
 .container p {
-    color: var(--whiite);
+    color: var(--white);
     user-select: none;
 }
 
@@ -163,12 +202,12 @@ a:hover {
     color: var(--text-hover-color);
 }
 
-/* 8. Footer */
+/* 7. Footer */
 .footer {
     width: 100vw;
     height: 10vh;
-    background-color: var(--main-background);
-    color: var(--whiite);
+    background-color: rgba(51, 51, 51, 0.78);
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,7 +234,7 @@ a:hover {
     color: var(--text-hover-color);
 }
 
-/* 9. Animations and Effects */
+/* 8. Animations and Effects */
 #jap_fan {
     display: inline-flex;
     background-repeat: no-repeat;
@@ -212,7 +251,7 @@ a:hover {
 }
 
 #jap_fan:active {
-    transform: rotate(-90deg) scale(0.9);
+    transform: rotate(-90deg) scale(0.85);
 }
 
 .container-pointer {
@@ -222,9 +261,7 @@ a:hover {
     background-position: center;
     background-repeat: no-repeat;
     align-self: center;
-    justify-self: flex-end;
-    top: 12.5vh;
-    transition: ease-out 0.5s;
+    transition: ease-in-out 0.4s;
 }
 
 #react_logo {
@@ -235,5 +272,60 @@ a:hover {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    align-self: center;
 }
+
+/* 9. Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.context-menu {
+    position: absolute;
+    text-align: center;
+    background: rgba(136, 43, 43, 0.53);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.38);
+    z-index: 1000;
+}
+
+.context-menu ul {
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    list-style: none;
+}
+
+.context-menu ul li {
+    padding-bottom: 7px;
+    padding-top: 7px;
+
+}
+
+.context-menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.context-menu ul li:hover {
+    background: rgba(136, 43, 43, 0.93);
+}
+
+.hire_me {
+    cursor: pointer;
+    user-select: none;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
